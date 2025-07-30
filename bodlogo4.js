@@ -10,9 +10,9 @@ let students = [
 ];
 function findAdultBalance(students, balance) {
   let filtered = students.filter((student) => {
-    return student.balance == balance;
+    return student.balance > balance;
   });
   return filtered;
 }
-let result = findAdultBalance(students, 2000);
+let result = findAdultBalance(students, 19999);
 console.log(result);
