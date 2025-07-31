@@ -1,7 +1,7 @@
-// 13. Тухайн supplier-аар шүүж бүтээгдэхүүнүүдийг буцаадаг функц бич.
-function filterBySupplier(products, supplierName) {
-  // ...
-}
+// 18. Зөвхөн name ба price талбартай шинэ массив үүсгэдэг функц бич.
+// function getNameAndPriceList(products) {
+//   // ...
+// }
 
 let data = [
   {
@@ -53,11 +53,11 @@ let data = [
     weight: 0.1,
   },
 ];
-function filterBySupplier(products, supplier) {
-  let filterd = products.filter((products) => {
-    return products.supplier.toLowerCase() == supplier.toLowerCase();
+function getNameAndPriceList(products) {
+  let hha = products.map((products) => {
+    return { product: products.name, price: products.price };
   });
-  return filterd;
+  return hha;
 }
-let filterBy = filterBySupplier(data, "pcmall");
-console.log(filterBy);
+let resultNameAndPriceList = getNameAndPriceList(data);
+console.log(resultNameAndPriceList);

@@ -1,7 +1,7 @@
-// 13. Тухайн supplier-аар шүүж бүтээгдэхүүнүүдийг буцаадаг функц бич.
-function filterBySupplier(products, supplierName) {
-  // ...
-}
+// 16. Нөөц багатай (≤ 5) бүтээгдэхүүнүүдийг шүүж буцаадаг функц бич.
+// function getLowStockProducts(products) {
+//   // ...
+// }
 
 let data = [
   {
@@ -53,11 +53,12 @@ let data = [
     weight: 0.1,
   },
 ];
-function filterBySupplier(products, supplier) {
-  let filterd = products.filter((products) => {
-    return products.supplier.toLowerCase() == supplier.toLowerCase();
+
+function getLowStockProducts(products) {
+  let filtered = products.filter((products) => {
+    return products.stock <= 5;
   });
-  return filterd;
+  return filtered;
 }
-let filterBy = filterBySupplier(data, "pcmall");
-console.log(filterBy);
+let result = getLowStockProducts(data);
+console.log(result);

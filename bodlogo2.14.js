@@ -1,7 +1,7 @@
-// 13. Тухайн supplier-аар шүүж бүтээгдэхүүнүүдийг буцаадаг функц бич.
-function filterBySupplier(products, supplierName) {
-  // ...
-}
+// 14. Бүх бүтээгдэхүүний нэрсийг массив болгон буцаадаг функц бич.
+// function getProductNames(products) {
+//   // ...
+// }
 
 let data = [
   {
@@ -53,11 +53,11 @@ let data = [
     weight: 0.1,
   },
 ];
-function filterBySupplier(products, supplier) {
-  let filterd = products.filter((products) => {
-    return products.supplier.toLowerCase() == supplier.toLowerCase();
+function getProductNames(products) {
+  let brandname = products.map((products) => {
+    return { getProducts: products.name };
   });
-  return filterd;
+  return brandname;
 }
-let filterBy = filterBySupplier(data, "pcmall");
-console.log(filterBy);
+let resultProductNames = getProductNames(data);
+console.log(resultProductNames);

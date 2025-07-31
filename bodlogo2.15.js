@@ -1,7 +1,7 @@
-// 13. Тухайн supplier-аар шүүж бүтээгдэхүүнүүдийг буцаадаг функц бич.
-function filterBySupplier(products, supplierName) {
-  // ...
-}
+// 15. Бүтээгдэхүүнүүдийг үнээр нь өсөхөөр эрэмбэлж буцаадаг функц бич.
+// function sortByPriceAscending(products) {
+//   // ...
+// }
 
 let data = [
   {
@@ -53,11 +53,12 @@ let data = [
     weight: 0.1,
   },
 ];
-function filterBySupplier(products, supplier) {
-  let filterd = products.filter((products) => {
-    return products.supplier.toLowerCase() == supplier.toLowerCase();
+
+function sortByPriceAscending(products) {
+  products.sort((products1, products2) => {
+    return products2.price - products1.price;
   });
-  return filterd;
+  return products;
 }
-let filterBy = filterBySupplier(data, "pcmall");
-console.log(filterBy);
+const result = sortByPriceAscending(data);
+console.log(result);

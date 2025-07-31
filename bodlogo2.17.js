@@ -1,5 +1,5 @@
-// 13. Тухайн supplier-аар шүүж бүтээгдэхүүнүүдийг буцаадаг функц бич.
-function filterBySupplier(products, supplierName) {
+// 17. Давхардалгүй нийлүүлэгчийн нэрсийн массив буцаадаг функц бич.
+function getUniqueSuppliers(products) {
   // ...
 }
 
@@ -53,11 +53,19 @@ let data = [
     weight: 0.1,
   },
 ];
-function filterBySupplier(products, supplier) {
-  let filterd = products.filter((products) => {
-    return products.supplier.toLowerCase() == supplier.toLowerCase();
+
+function getUniqueSuppliers(products) {
+  let arrSuppliers = products.map((product) => {
+    return product.supplier;
   });
-  return filterd;
+  let uniqueSuppliers = [];
+  arrSuppliers.forEach((supplier) => {
+    if (uniqueSuppliers.includes(supplier)) {
+    } else {
+      uniqueSuppliers.push(supplier);
+    }
+  });
+  return uniqueSuppliers;
 }
-let filterBy = filterBySupplier(data, "pcmall");
-console.log(filterBy);
+const resultUniqueSuppliers = getUniqueSuppliers(data);
+console.log("Array Of Unique Suppliers", resultUniqueSuppliers);
